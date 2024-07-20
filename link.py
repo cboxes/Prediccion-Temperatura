@@ -9,24 +9,24 @@ def fetch_data(endpoint):
      return data
 
 
-#coneccion
-conn= mysql.connector.connect(
+#coneccion hcha
+""" conn= mysql.connector.connect(
       host="127.0.0.1",
       port="3306",
       user="root",
       passwd="Mysql",
       db="clima"
   )
-c=conn.cursor()
+c=conn.cursor() """
 
 #seleccionar datos desde el API
 def vista_todos_datos():
-     # api_url = 'http://127.0.0.1:8000/api/predicciones/'
-     # datos = fetch_data(api_url)
+      api_url = 'http://127.0.0.1:8000/api/predicciones/'
+      datos = fetch_data(api_url)
     
-     # if datos:
-     #     return datos
+      if datos:
+          return datos
 
-     c.execute('Select * from predicciones order by Modelo, DS, NVAR')
-     datos=c.fetchall()
-     return datos
+     #c.execute('Select * from predicciones order by Modelo, DS, NVAR')
+     #datos=c.fetchall()
+     #return datos 
